@@ -32,7 +32,6 @@ function addUser(postData, callback) {
 			let updatePasswordHash = "UPDATE web_user SET password_hash =sha2(concat(:password,:pepper,password_salt),512) WHERE web_user_id = :userId;"
 			let params2 = {
 				password: postData.password,
-				pepper: passwordPepper,
 				userId: insertedID
 		}
 	console.log(updatePasswordHash);
